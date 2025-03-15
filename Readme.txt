@@ -1,0 +1,1 @@
+---The plan is to create a Playwright core project-
