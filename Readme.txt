@@ -21,16 +21,16 @@ How to Set up the project by installing  dependencies like Node and NPM packages
             -Issue command:    node -v and press ENTER
             -Issue command:    npm -v and press ENTER
             -If you see the version numbers appearing for each of the above commands.(i.e,if you have successfully installed Node!)
-            (if not re-start the machine and re check!)
-            
-            -Createa a working directory/folder for the Playwright project and in the command prompt, CD into the same folder.
+            (if not re-start the machine and re check!)            
+       
             -Create a folder annd install the latest NPM globally by issuing following commands..(Why NPM ?  It help us to install many software libraries and manage dependencies)
             -If successful you should be able to issue npm -v  command from directory and see the latest version number that you have just installed!
+            -Clone the repo from https://github.com/KC0122/playwright-core-project1.git ,open command prompt and CD into the same folder.
 
 
  -How to install Playwright successfully ?
-      -All set to Install Playwright! Create a folder for the project and provid a suitable name. In my case its D:\Myprojects\playwright-core-project1
-      -CD into this same folder in Command prompt
+      -All set to Install Playwright!Cloned repo looks like this on my machine! D:\Myprojects\playwright-core-project1
+      -CD into this same folder in the Command prompt
       -Double check by re issuing node -v & npm -v one after another, to see if they are still working or not.
       (Note in some machines the VSCode terminal window might give you an error if you issue the npm -v command.But in a command prompt as an admin, you should be able to see the version)
       
@@ -42,27 +42,11 @@ How to Set up the project by installing  dependencies like Node and NPM packages
          Once done, you should see below message on the command prompt
          
          Visit https://playwright.dev/docs/intro for more information. ✨
+        
+-Issue   npx playwright test  command, and you will see 2 tests are passing!
+           
+           Happy hacking! 🎭
 
-         Happy hacking! 🎭
-
-How to push your project?
-
--As ususal first issue the below command to start your local repo
- git init
-
--Then you you Add the files to be pushed  
-ex:   git add Readme.txt
-
--Then Commit this file to your local repo by issuing the below command  
-      git commit -m "Playwright core project- pushing via SSH"
-
--If successful, issue the below command to see the commit id   
-      git log
-
-- git remote add origin git@github.com:KC0122/playwright-core-project1.git
-
-Finally to push
-- git push -u origin -main
 
 
 ***********************************************************
