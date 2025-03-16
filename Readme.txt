@@ -47,6 +47,10 @@ How to Set up the project by installing  dependencies like Node and NPM packages
            
            Happy hacking! 🎭
 
+-To open the report issue the below command
+   npx playwright show-report!
+
+  
 
 
 ***********************************************************
@@ -54,6 +58,7 @@ Git Push Related Errors & Lessons Learned
 **************************************************************
 
 -Learned about  await page.getByRole('link', { name: 'Sign in' }).click();
+ https://www.bbc.co.uk/
 -This element did not have an attribute called role! but still we could use it!
 
 
