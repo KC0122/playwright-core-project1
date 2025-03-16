@@ -57,7 +57,7 @@ How to Set up the project by installing  dependencies like Node and NPM packages
 
 
 ***********************************************************
-Git Push Related Errors & Lessons Learned
+Lessons Learned
 **************************************************************
 
 -Learned about  await page.getByRole('link', { name: 'Sign in' }).click();
