@@ -23,7 +23,10 @@ How to Set up the project by installing  dependencies like Node and NPM packages
             -If you see the version numbers appearing for each of the above commands.(i.e,if you have successfully installed Node!)
             (if not re-start the machine and re check!)            
        
-            -Create a folder annd install the latest NPM globally by issuing following commands..(Why NPM ?  It help us to install many software libraries and manage dependencies)
+            -Create a folder annd install the latest NPM globally by issuing following commands.
+                 npm install -g npm        
+                
+             Why NPM ?  It help us to install many software libraries and manage dependencies.
             -If successful you should be able to issue npm -v  command from directory and see the latest version number that you have just installed!
             -Clone the repo from https://github.com/KC0122/playwright-core-project1.git ,open command prompt and CD into the same folder.
 
