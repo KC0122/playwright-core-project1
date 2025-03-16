@@ -64,23 +64,43 @@ Hi XXXX! You've successfully authenticated, but GitHub does not provide shell ac
 How to push your project?
 
 -As ususal first issue the below command to start your local repo
-
  git init
 
--Then you you Add the files to be pushed
-  
+-Then you you Add the files to be pushed  
 ex:   git add Readme.txt
 
--Then Commit this file to your local repo by issuing the below command
-  
+-Then Commit this file to your local repo by issuing the below command  
       git commit -m "Playwright core project- pushing via SSH"
 
--If successful, issue the below command to see the commit id
-   
+-If successful, issue the below command to see the commit id   
       git log
 
 - git remote add origin git@github.com:KC0122/playwright-core-project1.git
 
 Finally to push
-
 - git push -u origin -main
+
+
+***********************************************************
+Git Push Related Errors & Lessons Learned
+**************************************************************
+
+-Whn trying to push your changes , if youever see a list of git errors as per below.
+
+"
+! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'github.com:XXX/playwright-core-project1.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details."
+
+
+
+To fix this simply follow the below commands:
+
+1). git fetch origin main:temp    PRESS ENTER
+2). git rebase temp               PRESS ENTER
+3).git push origin HEAD:main      PRESS ENTER
+
+Then you should see that your changes are appearing in your github repo.
