@@ -1,19 +1,20 @@
 import { test, expect } from '@playwright/test';
-
+/*
 test('has title', async ({ page }) => {
   await page.goto('https://www.bbc.co.uk/');
-
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/BBC - Home/);
 });
+*/
 
-
-test('get started link', async ({ page }) => {
-  await page.goto('https://www.bbc.co.uk/');
+test('Upload a text file to QA-Automation site', async ({ page }) => {
+  await page.goto('https://qa-automation-practice.netlify.app/file-upload.html');
+  await page.locator('input[type="file"]').setInputFiles('./tests/Txt.txt');
+  await page.locator('button[type="submit"]').click();
+  await expect(page.locator('div#file_upload_response')).toHaveText(/successfully uploaded/);
+  // Click the get started link.
 
   // Click the get started link.
-  await page.getByRole('link', { name: 'Sign in' }).click();
+  //await page.getByRole('link', { name: 'Sign in' }).click();
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page).toHaveURL(/account.bbc.com/);
 });
