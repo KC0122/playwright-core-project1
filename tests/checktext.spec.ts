@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test('Upload via filechooser method', async ({ page }) => {
+test('Upload via filechooser method', async ({ page }, testInfo) => {
+
+  testInfo.annotations.push({type:'BBC Tests',description: 'Ref1' })
   await page.goto('https://practice.expandtesting.com/upload');
   const filechooserpromise=  page.waitForEvent('filechooser');
   await page.locator('input#fileInput').click();
@@ -9,6 +11,7 @@ test('Upload via filechooser method', async ({ page }) => {
   await page.waitForTimeout(6000);
   await page.locator('button#fileSubmit').click();
   await expect(page.locator('h1')).toHaveText(/File Uploaded!/);    
+  testInfo.annotations.push({ type: 'testrail_attachment', description: "This is a test automation trial with TestRail" });
 });
 
 

@@ -1,0 +1,12 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="12.520070000000002">
+<testsuite name="checktext.spec.ts" timestamp="2025-07-17T19:49:45.974Z" hostname="chromium" tests="2" failures="0" skipped="0" time="10.606" errors="0">
+<testcase name="Upload via filechooser method" classname="checktext.spec.ts" time="9.038">
+<properties>
+<property name="testrail_attachment" value="This is a test automation trial with TestRail">
+</property>
+</properties>
+</testcase>
+<testcase name="Upload a text file using Input method " classname="checktext.spec.ts" time="1.568">
+</testcase>
+</testsuite>
+</testsuites>

@@ -54,8 +54,85 @@ How to Set up the project by installing  dependencies like Node and NPM packages
    npx playwright show-report!
 
   
+****************************************************************
+How to integrate Playwright Tests into TestRail?
+****************************************************************
+
+Pree-requisites
+
+-You should have Node installed in the machine
+-You have Npm in the machine
+-You should have the latest Python version installed in the machine
+
+Then issue below commands:
+
+-To install TestRail CLI
+     npm install with the --global
+
+-You now need to set the PATH variable
+     -Search for Enviornmental variables
+     -Click on Enviornment variable
+     - In the top panel (User variable for user section), click on Path
+     -Click Edit
+     -Paste this path as a new entry
+              C:\Users\User\AppData\Roaming\Python\Python313\Scripts
+    -Click ok
+    -Close old Terminal/Powershell windows
+    -Open a new Terminal window
+    -Issue command   trcli
+      it should return something like below(i.e, then a;; good to go!)
+        
+        TestRail CLI v1.10.0
+         Copyright 2025 Gurock Software GmbH - www.gurock.com
+         Supported and loaded modules:
+            - parse_junit: JUnit XML Files (& Similar)
+            - parse_robot: Robot Framework XML Files
+            - parse_openapi: OpenAPI YML Files
+            - add_run: Create a new test run
+
+-Also login into your Testrail acount and  in the administration area in TestRail under Administration > Site Settings > API.'
+       API should be enabled
+-Open Playwright.config
+   find the reporter section.Copy and paste the below
+
+reporter: [
+    ['list'],
+    ['html', { outputFolder: 'test-results', open: 'never' }],
+    ['junit', { outputFile: 'Junit-test-results.xml', embedAnnotationsAsProperties: true,}]
+  ],
 
 
+-You need to embed few infor which will help to transfer these test details to TestRail
+
+
+      for ex: Your tests should have these infor:
+
+
+      test('Upload via filechooser method', async ({ page }, testInfo) => {
+
+      .....
+      ....
+      ..   
+      testInfo.annotations.push({ type: 'testrail_attachment', description: "This is a test automation trial with TestRail" });
+      });
+
+
+--First you need to run the tests as per usual
+    npx playwright test
+
+
+-After that in order to push the test results to TestRail you need to issue the below:
+(make sure you select paste as "one line")
+
+trcli -y -h "https://qatestingiwc1234.testrail.io/" 
+-u "xxxxx@gxxx.com"
+-p "xxxxxxx" 
+--project "TestRail_Integration_Trial" 
+parse_junit -f "Junit-test-results.xml" --title "Testrun-05-07-2025"
+
+
+ 
+  
 ***********************************************************
 Lessons Learned
 **************************************************************
