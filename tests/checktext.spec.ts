@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('Upload via filechooser method', async ({ page }, testInfo) => {
 
-  testInfo.annotations.push({type:'BBC Tests',description: 'Ref1' })
+  testInfo.annotations.push({type:'File Upload Test',description: 'Ref1' })
   await page.goto('https://practice.expandtesting.com/upload');
   const filechooserpromise=  page.waitForEvent('filechooser');
   await page.locator('input#fileInput').click();
