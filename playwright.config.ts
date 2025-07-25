@@ -1,5 +1,11 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const testRailOptions = {
+  // Whether to add <properties> with all annotations; default is false
+  embedAnnotationsAsProperties: true,
+  // Where to put the report.
+  outputFile: './test-results/results.xml'
+};
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -25,7 +31,7 @@ export default defineConfig({
      reporter: [
     ['list'],
     ['html', { outputFolder: 'test-results', open: 'never' }],
-    ['junit', { outputFile: 'Junit-test-results.xml', embedAnnotationsAsProperties: true,}]
+    ['junit', testRailOptions]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

@@ -120,17 +120,38 @@ reporter: [
 --First you need to run the tests as per usual
     npx playwright test
 
+-Login into TestRail and make sure you have admin roles set up.(In the settings, go add all roles and save)
 
 -After that in order to push the test results to TestRail you need to issue the below:
 (make sure you select paste as "one line")
 
-trcli -y -h "https://qatestingiwc1234.testrail.io/" 
--u "xxxxx@gxxx.com"
--p "xxxxxxx" 
+trcli -y -h https://qatestingiwc1234.testrail.io/ 
+-u sacakameel@googlemail.com 
+-p Balapitiya$01 
 --project "TestRail_Integration_Trial" 
-parse_junit -f "Junit-test-results.xml" --title "Testrun-05-07-2025"
+parse_junit 
+--title "Testrun-23-07-2025"
+-f "./Results.xml" 
 
 
+trcli -y \
+-h https://qatestingiwc1234.testrail.io/ \
+-u sacakameel@googlemail.com 
+-p Balapitiya$01 
+-k BrkxU38u5dUuskHiimb8-Cj2rlve3sKSWzBBvUUT2
+--project "TestRail_Integration_Trial" 
+parse_junit 
+--title "Testrun-23-07-2025"
+-f "./reports/Results.xml" 
+
+
+trcli -y -h https://qatestingiwc1234.testrail.io/ 
+-u sacakameel@googlemail.com 
+-p Balapitiya$01  
+--project "TRCLI_Test" 
+parse_junit 
+--title "Cypress Automated Test Run" 
+-f ".test-results/junit-report.xml" 
  
   
 ***********************************************************
